@@ -7,7 +7,7 @@
 *
 * @version 1.0.0
 * Creado ‎viernes, ‎7‎ de ‎junio‎ de ‎2019, ‏‎01:38 pm
-* Última Modificación el 19/07/2019
+* Última Modificación el 25/07/2019
 */
 ?>
 <div class="row">
