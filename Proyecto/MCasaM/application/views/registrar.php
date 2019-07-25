@@ -18,7 +18,6 @@
             <hr class="my-4">
             <div class="form-container table-container">
                 <!--En el presente formulario se solicitarán los datos del administrador nuevo(se cambiará para que sean los datos del cliente), enviando la información al Controlado Registrar en la función guardar().
-                Además de enviar en hidden el tipo, esto porque el administador le otorgará que tipo de administrador es por el momento(Tipo Lectura,Escritura, Ambos). Al implementarlo con los clientes este campo dejará de existir.
                 Los campos son requeridos y también cuentan con una validación con el atributo pattern.-->
                 <form action="<?=base_url();?>index.php/Registrar/guardar" method="post" id="crudForm"  enctype="multipart/form-data" accept-charset="utf-8">
                     <div class="form-group nombre_form_group row">

@@ -11,8 +11,8 @@ class Compra extends CI_Controller
 			$crud = new grocery_CRUD();
 			$crud->set_theme('bootstrap-v4');
 			$crud->set_table('compra');
-			$crud->columns('idCompra','fecha_compra','estatus','compra_idPedido');
-			$crud->required_fields('fecha_compra','estatus','compra_idPedido');
+			$crud->columns('idCompra','fecha_compra','pendiente','compra_idPedido');
+			$crud->required_fields('fecha_compra','pendiente','compra_idPedido');
 			$crud->set_relation('compra_idPedido','pedido','idPedido');
 			$crud->display_as('compra_idPedido','Número Pedido');
 			$crud->display_as('fecha_compra','Fecha de la compra');

@@ -11,12 +11,15 @@ class Comentario extends CI_Controller
 			$crud = new grocery_CRUD();
 			$crud->set_theme('bootstrap-v4');
 			$crud->set_table('comentario');
-			$crud->columns('idComentario','comentario','estatus','comentario_idCliente','comentario_idRespuesta');
+			$crud->columns('idComentario','comentario','comentario_idEstatus','comentario_idCliente','comentario_idRespuesta');
 			$crud->required_fields('comentario','estatus','comentario_idCliente');
 			$crud->set_relation('comentario_idCliente','cliente','nombre_cliente');
 			$crud->set_relation('comentario_idRespuesta','respuesta','respuesta');
 			$crud->display_as('comentario_idRespuesta','Respuesta');
-			$crud->display_as('comentario_idCliente','Cliente');
+			$crud->display_as('comentario_idCliente','Cliente');			
+			$crud->display_as('comentario_idEstatus','Estatus');
+			$crud->set_relation('comentario_idEstatus','estatus','estatus');
+
 
 			$output=$crud->render();
 			//llama la vista, renderiza el crud y le enviamos a la vista para que lo muestre, eso lo enviamos por medio de casteo

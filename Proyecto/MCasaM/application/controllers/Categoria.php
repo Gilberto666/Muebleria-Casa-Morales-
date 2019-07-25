@@ -11,10 +11,13 @@ class Categoria extends CI_Controller
 			$crud  =  new grocery_CRUD(); 
 			$crud->set_theme('bootstrap-v4');
 			$crud->set_table('categoria');
-			$crud->columns('idCategoria','nombre_categoria','estatus');
-			$crud->required_fields('nombre_categoria','estatus');
+			$crud->columns('idCategoria','nombre_categoria','categoria_idEstatus');
+			$crud->required_fields('nombre_categoria','categoria_idEstatus');
 			$crud->display_as('idCategoria','IdCategoría');
 			$crud->display_as('nombre_categoria','Categoría');
+			$crud->display_as('categoria_idEstatus','Estatus');
+			$crud->set_relation('categoria_idEstatus','estatus','estatus');
+
 
 
 			$output=$crud->render();

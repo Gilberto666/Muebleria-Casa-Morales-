@@ -11,8 +11,11 @@ class Estado extends CI_Controller
 			$crud = new grocery_CRUD();
 			$crud->set_theme('bootstrap-v4');
 			$crud->set_table('estado');
-			$crud->columns('idEstado','estado','estatus');
+			$crud->columns('idEstado','estado','estado_idEstatus');
 			$crud->required_fields('estatus','estado');
+			$crud->display_as('estado_idEstatus','Estatus');
+			$crud->set_relation('estado_idEstatus','estatus','estatus');
+
 			
 
 			$output=$crud->render();

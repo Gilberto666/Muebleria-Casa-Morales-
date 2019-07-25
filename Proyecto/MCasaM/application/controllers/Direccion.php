@@ -11,11 +11,12 @@ class Direccion extends CI_Controller
 			$crud = new grocery_CRUD();
 			$crud->set_theme('bootstrap-v4');
 			$crud->set_table('direccion');
-			$crud->columns('idDireccion','codigo_postal','estado_idEstado','municipio','colonia','calle','numero','cliente_idCliente');
-			$crud->required_fields('codigo_postal','estado_idEstado','municipio','colonia','calle','numero','cliente_idCliente');
+			$crud->columns('idDireccion','codigo_postal','estado_idEstado','municipio','colonia','calle','numero','telefono','cliente_idCliente');
+			$crud->required_fields('codigo_postal','estado_idEstado','municipio','colonia','calle','numero','telefono','cliente_idCliente');
 			$crud->display_as('numero','Número');
 			$crud->display_as('cliente_idCliente','Número de Cliente');
 			$crud->display_as('codigo_postal','Código Postal');
+			$crud->display_as('telefono','Teléfono');
 			$crud->display_as('estado_idEstado','Estado');
 			$crud->set_relation('cliente_idCliente','cliente','idCliente');
 			$crud->set_relation('estado_idEstado','estado','estado');

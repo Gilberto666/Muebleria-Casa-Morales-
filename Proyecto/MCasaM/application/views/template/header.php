@@ -75,7 +75,7 @@
 			        </li>			      	
 			    <?php if($this->session->userdata('login')){ ?>
             		<li class="nav-item active">
-			        	<a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Administrador/">CPanel</a>
+			        	<a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Usuario/">CPanel</a>
 			        </li>
             		<li class="nav-item active">
             			<a style="color:white; background-color: red;" href="<?=base_url(); ?>index.php/MuebleriaCasaMorales/logout" class="nav-link btn-outline-primary">Cerrar Sesión</a>

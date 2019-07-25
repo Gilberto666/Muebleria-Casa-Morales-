@@ -11,8 +11,8 @@ class Promocion extends CI_Controller
 			$crud = new grocery_CRUD();
 			$crud->set_theme('bootstrap-v4');
 			$crud->set_table('promocion');
-			$crud->columns('idPromocion','nombre_promocion','fecha_inicial','fecha_final','descripcion_promo','imagen_promo','promocion_idProducto','estatus');
-			$crud->required_fields('nombre_promocion','fecha_inicial','fecha_final','descripcion_promo','imagen_promo','promocion_idProducto','estatus');
+			$crud->columns('idPromocion','nombre_promocion','fecha_inicial','fecha_final','descripcion_promo','imagen_promo','promocion_idProducto','promocion_idEstatus');
+			$crud->required_fields('nombre_promocion','fecha_inicial','fecha_final','descripcion_promo','imagen_promo','promocion_idProducto','promocion_idEstatus');
 			$crud->set_relation('promocion_idProducto','producto','nombre_producto');			
 			$crud->display_as('nombre_promocion','Nombre Promoción');
 			$crud->display_as('promocion_idProducto','Producto');
@@ -21,6 +21,8 @@ class Promocion extends CI_Controller
 			$crud->display_as('imagen_promo','Imagén del Promoción');
 			$crud->display_as('idPromocion','IdPromoción');
 			$crud->display_as('descripcion_promo','Descripción Promoción');
+			$crud->display_as('promocion_idEstatus','Estatus');
+			$crud->set_relation('promocion_idEstatus','estatus','estatus');			
 			$crud->set_field_upload('imagen_promo','assets/uploads/files/promo', "jpg|jpeg|png");
 
 

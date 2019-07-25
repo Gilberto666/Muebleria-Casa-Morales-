@@ -80,7 +80,7 @@ if($this->session->userdata('login')==false){
 		</div>
 	 	<div class="row">
 	 		<div class="col-sm-12 col-md-12" align="center">
-	 			<h2>Administradores</h2>
+	 			<h2>Usuarios</h2>
 	 		</div>
 	 	</div>
 	 	<!--Variable output almacena toda la información y formularios creados por Grocery Crud-->
