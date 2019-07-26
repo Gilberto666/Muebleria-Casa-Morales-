@@ -11,11 +11,7 @@
 ?>
 
 <!--En la variable session comparamos si se encuentra un valor en el login si no existe esto quiere decir que no se ha iniciado sesión por lo cual no se puede entrar a el panel de control y lo direccionará al inicio, si cuenta con un valor la session entonces si podrá visualizar el Cpanel del sitio-->
-<?php 
-if($this->session->userdata('login')==false){
-	redirect('MuebleriaCasaMorales');
-}else {
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -48,12 +44,12 @@ if($this->session->userdata('login')==false){
 				        <a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/MuebleriaCasaMorales">Inicio </a>
 				        </li>
 				        <li class="nav-item">
-				        <a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Administrador/">Administradores</a><br>
+				        <a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Usuario/">Usuarios</a><br>
 				        <a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Producto/">Productos</a>
 				        </li>  
 				        <li class="nav-item">
 				        <a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Categoria/">Categorías</a><br>
-				        <a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Cliente/">Clientes</a>
+				        <a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Estatus/">Estatus</a>
 				        </li> 
 				        <li class="nav-item">
 				        <a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Comentario">Comentarios</a><br>
@@ -96,5 +92,3 @@ if($this->session->userdata('login')==false){
 	</div>
  </body>
 </html>
-<!--Fin del if de session-->
-<?php } ?>

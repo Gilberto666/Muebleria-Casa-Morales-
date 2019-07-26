@@ -10,6 +10,14 @@
 * Última Modificación el 19/07/2019
 */
 ?>
+
+    <div class="col-md-12" align="center">
+        <?php if($this->session->userdata('idUsuario')!=null){ ?>
+            <h4>USUARIO:</h4> <h4><strong><?php echo $this->session->userdata('nombre')?> <?php echo $this->session->userdata('apellido')?> </strong></h4>
+        <?php }else {?>
+            <h4>USUARIO:</h4> <h4><strong> Invitado</strong></h4>
+        <?php } ?>
+    </div>
 <div class="row">
     <div class="col-md-6"><br>
         <div align="center" style="color:#3E4095;"><h3>Promociones</h3><br></div>

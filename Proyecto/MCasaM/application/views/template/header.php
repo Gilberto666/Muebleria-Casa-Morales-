@@ -82,7 +82,7 @@
             		</li>  
             	<?php }else{ ?>
 			    	<li class="nav-item active">
-			        	<a style="color:black; background-color: skyblue;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/MuebleriaCasaMorales/Login"><strong>Login</strong></a>
+			        	<a style="color:black; background-color: skyblue;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/MuebleriaCasaMorales/Login"><strong>Iniciar Sesión</strong></a>
 			        </li>
 			        <li class="nav-item active">
 			        	<a style="color:black; background-color: silver;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/MuebleriaCasaMorales/Registrar"><strong>Registrar</strong></a>

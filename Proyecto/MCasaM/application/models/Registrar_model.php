@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No tienes Permiso');
 	class Registrar_model extends CI_Model{
-		private $idAdministrador;
+		private $idUsuario;
 		private $nombre;
 		private $apellido;
 		private $email;
@@ -11,10 +11,10 @@ defined('BASEPATH') OR exit('No tienes Permiso');
 		parent::__construct();
 	}
 		public function getId(){
-			return $this->idAdministrador;
+			return $this->idUsuario;
 		}
-		public function setId($idAdministrador){
-			 $this->idAdministrador=$idAdministrador;
+		public function setId($idUsuario){
+			 $this->idUsuario=$idUsuario;
 		}
 		public function getNombre(){
 			return $this->nombre;
@@ -49,14 +49,14 @@ defined('BASEPATH') OR exit('No tienes Permiso');
 
 		public function guardar(){					
 			$data=array(
-				'idAdministrador'=>$this->idAdministrador,
+				'idUsuario'=>$this->idUsuario,
 				'nombre'=>$this->nombre,
 				'apellido'=>$this->apellido,
 				'email'=>$this->email,
 				'password'=>$this->password,
 				'tipo'=>$this->tipo				
 			);
-			$this->db->insert('administrador',$data);
+			$this->db->insert('usuario',$data);
 		}
 	}	
  ?>

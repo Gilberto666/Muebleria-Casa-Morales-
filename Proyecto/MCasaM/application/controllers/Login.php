@@ -1,34 +1,42 @@
 <?php 
-class Login extends CI_CONTROLLER{
-	
-	function __construct(){
-		parent::__construct();
-		$this->load->model('Usuario_model');
+	/**
+	 * 
+	 */
+	class Login extends CI_Controller
+	{
+		
+		public function index()
+		{
+			$email=$this->input->post('email');
+			$password=$this->input->post('password');
 
-	}
+			$this->load->model('Usuario_model');
+			$fila=$this->Usuario_model->getUser($email);
 
-	public function index(){
-		$this->load->view('login');
-	}
+			if($fila!=null){
+				if($fila->password==$password){
+					$data = array(
+								'idUsuario' => $fila->idUsuario,
+								'nombre' => $fila->nombre,
+								'apellido' =>$fila->apellido,
+								'email' =>$fila->email,
+								'tipo'=>$fila->tipo,
+								'login'=> true
+							);
 
-	public function login(){
-		$user=$this->input->post('user');
-		$pass=$this->input->post('pass');
-		$this->Usuario_model->setUsuario($user);
-		$this->Usuario_model->setPassword($pass);
-		$cantidad = $this->Usuario_model->login();
-		if ($cantidad <= 0) {
-			redirect('Usuario/index');
-		}else{
-			$datosUsuario=$this->Usuario_model->listar();
+					$this->session->set_userdata($data);
+					redirect('MuebleriaCasaMorales/index');
+				}else{
+					redirect('MuebleriaCasaMorales/index');
 
-			foreach ($datosUsuario as $du) {
-				$sesion_data = array(
-					'user' => $du->user
-				);
+				}
 			}
-			$this->session->set_userdata($set_userdata);
-			redirect('Usuario/index');
+			else{
+				redirect('MuebleriaCasaMorales/index');
+			}
 		}
+
+
 	}
-}
+
+?>

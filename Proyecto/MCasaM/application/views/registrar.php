@@ -44,7 +44,7 @@
                                 <input type="password" id='field-password' class='form-control' name='password' type='text' value="" maxlength='100' pattern=".[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð0-9._%+-,.'-]{3,50}" required />                            
                             </div>
                     </div>
-                    <input type="hidden" name="tipo" value="1">
+                    <input type="hidden" name="tipo" value="2">
                     <div class="form-group gcrud-form-group" align="center">
                         <div class="col-sm-offset-3 col-sm-7">
                             <button class="btn btn-secondary btn-success b10" type="submit" id="form-button-save">
