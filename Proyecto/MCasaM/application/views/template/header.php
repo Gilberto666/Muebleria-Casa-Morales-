@@ -74,12 +74,18 @@
 			        	<a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Carrito/">Carrito <img src="<?=base_url();?>/images/_ionicons_svg_md-cart.svg" style="height: 25px;width: 30px;"></a>
 			        </li>			      	
 			    <?php if($this->session->userdata('login')){ ?>
-            		<li class="nav-item active">
-			        	<a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Usuario/">CPanel</a>
-			        </li>
-            		<li class="nav-item active">
-            			<a style="color:white; background-color: red;" href="<?=base_url(); ?>index.php/MuebleriaCasaMorales/logout" class="nav-link btn-outline-primary">Cerrar Sesión</a>
-            		</li>  
+			    	<?php if($this->session->userdata('tipo')!=2){ ?>
+	            		<li class="nav-item active">
+				        	<a style="color:white;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/Usuario/">CPanel</a>
+				        </li>			        
+	            		<li class="nav-item active">
+	            			<a style="color:white; background-color: red;" href="<?=base_url(); ?>index.php/MuebleriaCasaMorales/logout" class="nav-link btn-outline-primary">Cerrar Sesión</a>
+	            		</li>
+                  	<?php }else{ ?>
+						<li class="nav-item active">
+	            			<a style="color:white; background-color: red;" href="<?=base_url(); ?>index.php/MuebleriaCasaMorales/logout" class="nav-link btn-outline-primary">Cerrar Sesión</a>
+	            		</li>                  		
+			    <?php } ?>  
             	<?php }else{ ?>
 			    	<li class="nav-item active">
 			        	<a style="color:black; background-color: skyblue;" class="nav-link btn-outline-primary" href="<?=base_url(); ?>index.php/MuebleriaCasaMorales/Login"><strong>Iniciar Sesión</strong></a>
