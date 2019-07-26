@@ -14,7 +14,7 @@
 			$fila=$this->Usuario_model->getUser($email);
 
 			if($fila!=null){
-				if($fila->password==$password){
+				if($fila->password==md5($password)){
 					$data = array(
 								'idUsuario' => $fila->idUsuario,
 								'nombre' => $fila->nombre,

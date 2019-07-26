@@ -47,7 +47,8 @@ defined('BASEPATH') OR exit('No tienes Permiso');
 			 $this->tipo=$tipo;
 		}
 
-		public function guardar(){					
+		public function guardar(){	
+				
 			$data=array(
 				'idUsuario'=>$this->idUsuario,
 				'nombre'=>$this->nombre,

@@ -16,7 +16,7 @@ class Registrar extends CI_Controller {
 		$this->Registrar_model->setNombre($this->input->post('nombre'));
 		$this->Registrar_model->setApellido($this->input->post('apellido'));
 		$this->Registrar_model->setEmail($this->input->post('email'));
-		$this->Registrar_model->setPassword($this->input->post('password'));		
+		$this->Registrar_model->setPassword(md5($this->input->post('password')));		
 		$this->Registrar_model->settipo($this->input->post('tipo'));
 		$this->Registrar_model->guardar();
 		redirect('MuebleriaCasaMorales/login');		
