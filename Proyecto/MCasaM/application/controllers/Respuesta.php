@@ -13,7 +13,6 @@ class Respuesta extends CI_Controller
 			$crud->set_table('respuesta');
 			$crud->columns('idRespuesta','respuesta','respuesta_idEstatus');
 			$crud->required_fields('respuesta','respuesta_idEstatus');
-			$crud->set_relation('tipo','tipo','nombre_tipo_usuario');
 			$crud->display_as('respuesta_idEstatus','Estatus');
 			$crud->set_relation('respuesta_idEstatus','estatus','estatus');		
 

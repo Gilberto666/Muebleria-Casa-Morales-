@@ -13,7 +13,7 @@ class Comentario extends CI_Controller
 			$crud->set_table('comentario');
 			$crud->columns('idComentario','comentario','comentario_idEstatus','comentario_idCliente','comentario_idRespuesta');
 			$crud->required_fields('comentario','estatus','comentario_idCliente');
-			$crud->set_relation('comentario_idCliente','cliente','nombre_cliente');
+			$crud->set_relation('comentario_idCliente','usuario','nombre');
 			$crud->set_relation('comentario_idRespuesta','respuesta','respuesta');
 			$crud->display_as('comentario_idRespuesta','Respuesta');
 			$crud->display_as('comentario_idCliente','Cliente');			

@@ -13,7 +13,7 @@ class Pedido extends CI_Controller
 			$crud->set_table('pedido');
 			$crud->columns('idPedido','cantidad_producto','fecha_pedido','total','pedido_idEstatus','pedido_idCliente','pedido_idProducto');
 			$crud->required_fields('cantidad_producto','fecha_pedido','total','estatus','pedido_idCliente','pedido_idProducto');
-			$crud->set_relation('pedido_idCliente','cliente','idCliente');
+			$crud->set_relation('pedido_idCliente','usuario','nombre');
 			$crud->set_relation('pedido_idProducto','producto','idProducto');			
 			$crud->display_as('fecha_pedido','Fecha Pedido');
 			$crud->display_as('pedido_idProducto','Productos');

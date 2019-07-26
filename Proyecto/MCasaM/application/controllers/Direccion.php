@@ -18,7 +18,7 @@ class Direccion extends CI_Controller
 			$crud->display_as('codigo_postal','Código Postal');
 			$crud->display_as('telefono','Teléfono');
 			$crud->display_as('estado_idEstado','Estado');
-			$crud->set_relation('cliente_idCliente','cliente','idCliente');
+			$crud->set_relation('cliente_idCliente','usuario','nombre');
 			$crud->set_relation('estado_idEstado','estado','estado');
 
 
