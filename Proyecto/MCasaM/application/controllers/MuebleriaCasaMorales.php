@@ -31,14 +31,16 @@
 			$data['contenido']='registrar';
 			$this->load->view('template/template',$data);
 		}
-
 		public function vistaprevia($idProducto){
 			$data['contenido']='vistaprevia';
 			$this->ListarVistas_model->setIdProducto($idProducto);
 			$data['producto']=$this->ListarVistas_model->listarProductoVistaPrevia();
 			$this->load->view('template/template',$data);
 		}
-
+		public function RegistroExitoso(){
+			$data['contenido']='RegistroExitoso';
+			$this->load->view('template/template',$data);
+		}
 		public function logout(){
 			$this->session->sess_destroy();
 			redirect('MuebleriaCasaMorales/index');

@@ -48,7 +48,7 @@
 			<div class="col-md-12">
 				<br>
 				<input type="hidden" name="comentario_idEstatus" value="2">
-				<input type="hidden" name="comentario_idRespuesta" value="">
+				<input type="hidden" name="comentario_idRespuesta" value="1">
 				<input type="hidden" name="comentario_idCliente" value="<?php echo $this->session->userdata('idUsuario'); ?>">
 				<button type="submit" class="btn btn-success">Publicar</button>	
 			</div>

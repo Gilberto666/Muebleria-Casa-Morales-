@@ -13,12 +13,11 @@ class Comentarios extends CI_Controller {
 	}
 	
 	public function guardar(){
-		$this->Comentarios_model->setNombre($this->input->post('nombre'));
-		$this->Comentarios_model->setApellido($this->input->post('apellido'));
-		$this->Comentarios_model->setEmail($this->input->post('email'));
-		$this->Comentarios_model->setPassword(md5($this->input->post('password')));		
-		$this->Comentarios_model->settipo($this->input->post('tipo'));
+		$this->Comentarios_model->setComentario($this->input->post('comentario'));
+		$this->Comentarios_model->setEstatus($this->input->post('comentario_idEstatus'));
+		$this->Comentarios_model->setCliente($this->input->post('comentario_idCliente'));
+		$this->Comentarios_model->setRespuesta($this->input->post('comentario_idRespuesta'));		
 		$this->Comentarios_model->guardar();
-		redirect('MuebleriaCasaMorales/login');		
+		redirect('MuebleriaCasaMorales/RegistroExitoso');		
 	}
 }
