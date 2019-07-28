@@ -35,7 +35,7 @@
                 <td>Nombre</td>
                 <td>Precio</td>
                 <td>Cantidad</td>
-                <td>Existencia</td>
+                <td>Subtotal</td>
                 <td>Quitar Producto</td>
             </tr>
                 <?php
@@ -87,13 +87,18 @@
                     //Gran total.
                     echo number_format($grand_total, 2); ?></b>
                     <?php // "Borrar carrito" ¿Llamar mensaje de confirmación javascript?>
-                    <input align="center" class ='fg-button teal' type="button" value="Limpiar carrito" onclick="clear_cart()">
+                    <input align="center" class ='fg-button teal' type="button" value="Limpiar carrito" onclick="<?php if ($this->session->userdata('idUsuario')==null) {?>clear_cart()<?php } ?>">
                     <?php // botón de envío. ?>
                     <input class ='fg-button teal'  type="submit" value="Actualizar Carrito">
                     <?php echo form_close(); 
                     //"Colocar botón de pedido" al hacer clic en enviar "facturación" controlador
                     ?>
-                    <input class ='fg-button teal' type="button" value="Ordenar" onclick="window.location = '#'">
+                    <input class ='fg-button teal' type="button" value="Ordenar"   
+                    onclick="window.location= <?php if ($this->session->userdata('idUsuario')!=null) {?>
+                         'Pedido'
+                    <?php  }else{ ?>
+                         'Login'
+                    <?php }?>">
                 </td>
             </tr>
             <?php } ?>
@@ -112,7 +117,7 @@
         ?>
             <div id='product_div'>
                 <div id='image_div'>
-                    <img src="<?php echo base_url() . 'assets/uploads/files/producto/'.$img ?>" style=' width: 100%;height: 100%;' class='anim_hover_1'/>
+                    <img src="<?php echo base_url() . 'assets/uploads/files/producto/'.$img ?>" style=' width: 100%;height: 100%;'/>
                 </div>
                 <div id='info_product'>
                     <div id='name'><?php echo $name; ?></div>

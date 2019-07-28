@@ -31,6 +31,8 @@
 			$data['contenido']='registrar';
 			$this->load->view('template/template',$data);
 		}
+
+
 		public function vistaprevia($idProducto){
 			$data['contenido']='vistaprevia';
 			$this->ListarVistas_model->setIdProducto($idProducto);

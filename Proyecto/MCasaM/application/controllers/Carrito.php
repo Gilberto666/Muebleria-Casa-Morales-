@@ -16,6 +16,15 @@ class Carrito extends CI_Controller {
         $this->load->view('template/template',$data);
     }
 
+    public function Pedido(){
+        $data['contenido']='pedido';
+        $this->load->view('template/template',$data);
+    }
+    public function Login(){
+        $data['contenido']='login';            
+        $this->load->view('template/template',$data);
+    }    
+
     function add()
     {
         $insert_data = array(
