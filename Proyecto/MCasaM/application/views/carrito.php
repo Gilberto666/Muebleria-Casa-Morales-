@@ -1,13 +1,13 @@
 <?php
 /**
-* Pagina de carrito
 *
 * @author Ernesto Rico Gutiérrez
-* @package application/views/
+* @link https://github.com/Gilberto666/Muebleria-Casa-Morales-/tree/Ernesto/Proyecto/MCasaM/application/views/
+* @package application/view/
 *
 * @version 1.0.0
-* Creado ‎viernes, ‎7‎ de ‎junio‎ de ‎2019, ‏‎01:38 pm
-* Última Modificación el 25/07/2019
+* Creado el 07/06/2019
+* Ultima modificacion el 02/08/2019
 */
 ?>
 <div class="row">
@@ -93,12 +93,13 @@
                     <?php echo form_close(); 
                     //"Colocar botón de pedido" al hacer clic en enviar "facturación" controlador
                     ?>
-                    <input class ='fg-button teal' type="button" value="Ordenar"   
-                    onclick="window.location= <?php if ($this->session->userdata('idUsuario')!=null) {?>
-                         'Pedido'
-                    <?php  }else{ ?>
-                         'Login'
-                    <?php }?>">
+                   <a href=
+                   <?php if ($this->session->userdata('idUsuario')!=null) {  ?>
+                        '<?=base_url();?>index.php/Carrito/Pedido/ <?php   foreach ($cart as $item){echo $item['id'];}?>'
+                    <?php }else{
+                        echo 'MuebleriaCasaMorales/Login';
+                    } ?>>
+                        <button class ='fg-button teal' type="button">Ordenar</button></a>
                 </td>
             </tr>
             <?php } ?>
@@ -122,7 +123,7 @@
                 <div id='info_product'>
                     <div id='name'><?php echo $name; ?></div>
                     <div id='desc'> <?php echo $description; ?>
-                    <br><b>Precio</b>:<big>$<?php echo $price; ?></big></div>
+                    <br><b>Precio</b>:<big>$<?php echo number_format($price); ?></big></div>
                         <?php
                             echo form_open('carrito/add');
                             echo form_hidden('id', $id);

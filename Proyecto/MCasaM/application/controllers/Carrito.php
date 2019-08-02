@@ -1,3 +1,18 @@
+<?php
+/**
+*
+* @author Ernesto Rico Gutiérrez
+* @link https://github.com/Gilberto666/Muebleria-Casa-Morales-/tree/Ernesto/Proyecto/MCasaM/application/controllers/
+* @package application/controllers/
+*
+* @version 1.0.0
+* Creado el 20/06/2019
+* Ultima modificacion el 02/08/2019
+*
+* @since Clase disponible desde la versión 1.0.0
+* @deprecated Clase obsoleta en la versión 2.0.0
+*/
+?>
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Carrito extends CI_Controller {
@@ -7,6 +22,8 @@ class Carrito extends CI_Controller {
         parent::__construct();
         $this->load->library('cart');
         $this->load->model('Carrito_model');
+        $this->load->model('ListarVistas_model');
+
     }
 
     public function index()
@@ -16,7 +33,17 @@ class Carrito extends CI_Controller {
         $this->load->view('template/template',$data);
     }
 
+    public function Compras(){
+        $data['pedido']=$this->ListarVistas_model->listarPedido();
+        $data['products'] = $this->Carrito_model->get_all();
+        $data['contenido']='compras';
+        $this->load->view('template/template',$data);
+    }
+
     public function Pedido(){
+        $data['estado']=$this->ListarVistas_model->listarEstados();
+        $data['direccion']=$this->ListarVistas_model->listarDirecciones($this->session->userdata('idUsuario'));
+        $data['products'] = $this->Carrito_model->get_all();
         $data['contenido']='pedido';
         $this->load->view('template/template',$data);
     }

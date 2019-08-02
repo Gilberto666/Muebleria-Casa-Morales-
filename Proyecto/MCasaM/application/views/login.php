@@ -1,15 +1,16 @@
 <?php
 /**
-* Pagina de login
 *
 * @author Ernesto Rico Gutiérrez
-* @package application/views/
+* @link https://github.com/Gilberto666/Muebleria-Casa-Morales-/tree/Ernesto/Proyecto/MCasaM/application/views/
+* @package application/view/
 *
 * @version 1.0.0
-* Creado viernes, ‎7‎ de ‎junio‎ de ‎2019, ‏‎01:37 pm
-* Última Modificación el 19/07/2019
+* Creado el 07/06/2019
+* Ultima modificacion el 02/08/2019
 */
 ?>
+
 <div class="row">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
