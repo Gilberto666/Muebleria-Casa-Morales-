@@ -1,0 +1,217 @@
+/*____________________________________________Animaciones____________________________________________*/
+/*metodo escalar*/
+@keyframes escalar{
+	0%{
+		transform: scale(0);
+	}
+	50%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(0);
+	}
+}
+
+/*___________________________________________________________________________________________________________*/
+
+/*metodo rotacion*/
+@keyframes rotacion{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(720deg);
+	}
+}
+
+/*___________________________________________________________________________________________________________*/
+
+/*metodo rotar y escalar*/
+@keyframes rota_escala{
+	from{
+		transform: scale(0) rotate(0deg);
+	}
+	to{
+		transform: scale(1) rotate(360deg);
+	}
+}
+
+/*___________________________________________________________________________________________________________*/
+
+/*metodo opacidad*/
+@keyframes opacidad{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+/*___________________________________________________________________________________________________________*/
+
+@keyframes rotate_y{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(720deg);
+	}
+}
+
+/*___________________________________________________________________________________________________________*/
+
+@keyframes rotate_x{
+	from{
+		transform: rotateX(0deg);
+	}
+	to{
+		transform: rotateX(720deg);
+	}
+}
+
+/*___________________________________________________________________________________________________________*/
+
+img.img_galery {
+	width: 50%;
+	height: 185px;
+	margin: 5px;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+
+img.img_galer {
+	width: 90%;
+	height: 100px;
+	margin: 5px;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+img.anim_scale{
+/*motor general*/
+	animation-name: escalar;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+
+	animation-iteration-count: infinite;
+	transform-style: preserve-3d;
+
+	animation-iteration-count: infinite;
+/*motor chrome*/
+	-webkit-animation-name: escalar;
+	-webkit-animation-duration: 4s;
+	-webkit-animation-timing-function: linear;
+/*motor opera*/
+	-o-animation-name: escalar;
+	-o-animation-duration: 4s;
+	-o-animation-timing-function: linear;
+/*motor mozilla*/
+	-moz-animation-name: escalar;
+	-moz-animation-duration: 4s;
+	-moz-animation-timing-function: linear;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+img.anim_rotate{
+	animation-name: rotacion;
+	animation-duration: 4s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	transform-style: preserve-3d;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+img.anim_rota_escala{
+	animation-name: rota_escala;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	transform-style: preserve-3d;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+img.anim_rotate2{
+	animation-name: rotacion;
+	animation-duration: 4s;
+	animation-timing-function: cubic-bezier(0.1,0.7,1.0,0.1);
+	animation-iteration-count: infinite;
+	transform-style: preserve-3d;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+img.anim_opacidad{
+	animation-name: opacidad;
+	animation-duration: 4s;	
+	animation-iteration-count: infinite;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+img.anim_rota_3d_y{
+	animation-name: rotate_y;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	transform-style: preserve-3d;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+img.anim_rota_3d_x{
+	animation-name: rotate_x;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	transform-style: preserve-3d;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+img.anim_hover_1{
+	opacity: 0.5;
+	transition: transform 2s linear;
+}
+img.anim_hover_1:hover{
+	opacity: 1;
+	transform: scale(1.25);
+}
+
+/*___________________________________________________________________________________________________________*/
+
+img.anim_hover_2{
+
+	transition: transform 4s linear;
+}
+
+img.anim_hover_2:hover{
+	transform: rotateY(360deg);
+}
+
+/*___________________________________________________________________________________________________________*/
+
+.anim_translate{
+	width: 300px;
+	height: 70px;
+	background-color: #999999;
+	border-radius: 20px;
+	text-align: center;
+	padding: 10px;
+	transition: transform 3s ease;
+}
+.anim_translate:hover{
+	background-color: #265a88;
+	color: white;	
+	text-align: center;
+	border: 5px solid black;
+	border-radius: 20px;
+	transform: translate(250px,0) rotate(5deg) skew(-15deg,0);
+}
